@@ -8,4 +8,9 @@ data = {
     'Spending Score (1-100)': np.random.randint(1, 101, n_customers)
 }
 ```
-- Shows Graph on
+- Shows Graph of Clusters (High/Low Income, High/Low Spending Score)
+- Provides data analysis
+
+- Streamlit
+- KMeans
+- Other classification models
