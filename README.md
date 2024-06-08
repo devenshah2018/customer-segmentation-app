@@ -25,4 +25,4 @@ Install dependencies using:
 ```pip install -r requirements.txt```
 
 Run application locally using:
-```streamlit run main.py```
+```streamlit run app.py```
