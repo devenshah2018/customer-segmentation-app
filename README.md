@@ -14,3 +14,4 @@ data = {
 - Streamlit
 - KMeans
 - Other classification models
+py -m streamlit run main.py
