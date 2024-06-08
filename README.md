@@ -1,5 +1,5 @@
 # Customer Segmentation App
-
+This application leverages the power of data to categorize customers into distinct groups based on their annual income and spending habits. Built with Python and Streamlit, this app enables businesses to visualize customer segments, optimize marketing strategies, and tailor products and services to meet the unique needs of each segment. With user-friendly controls and dynamic data visualization, it empowers companies to enhance customer engagement and drive targeted business growth. By clustering customers based on their income and spending habits, businesses can craft highly targeted marketing messages that resonate with specific segments. This precision in targeting leads to increased engagement, higher conversion rates, and more efficient use of marketing resources, significantly boosting the overall effectiveness of marketing efforts.
 - Upload customer activity training dataset
 ```
 data = {
