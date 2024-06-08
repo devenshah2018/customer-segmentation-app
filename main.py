@@ -5,21 +5,12 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.cluster import KMeans
 
-# Create a synthetic dataset
-# TODO: Create a flow to accept a CSV file with the following dataset
-np.random.seed(42)
-n_customers = 100
-data = {
-    'CustomerID': range(1, n_customers + 1),
-    'Annual Income (k$)': np.random.normal(50, 20, n_customers).clip(5, 100),
-    'Spending Score (1-100)': np.random.randint(1, 101, n_customers)
-}
-
-df = pd.DataFrame(data)
+# Initialize the dataframe
+df = pd.read_csv('customer_data.csv')
 
 # Define a function to train the K-Means model
 def train_kmeans(n_clusters):
-    features = df[['Annual Income (k$)', 'Spending Score (1-100)']]
+    features = df[['Annual Income', 'Spending Score']]
     model = KMeans(n_clusters=n_clusters, random_state=42)
     model.fit(features)
     df['Cluster'] = model.labels_
@@ -40,10 +31,10 @@ st.write(f"Clustering result with {n_clusters} clusters")
 
 # Plot the clusters
 fig, ax = plt.subplots()
-sns.scatterplot(data=df, x='Annual Income (k$)', y='Spending Score (1-100)', hue='Cluster', palette='tab10', ax=ax)
+sns.scatterplot(data=df, x='Annual Income', y='Spending Score', hue='Cluster', palette='tab10', ax=ax)
 ax.set_title("Customer Segments")
 st.pyplot(fig)
 
 # Show cluster centroids
 st.write("Cluster Centers:")
-st.write(pd.DataFrame(model.cluster_centers_, columns=['Annual Income (k$)', 'Spending Score (1-100)']))
+st.write(pd.DataFrame(model.cluster_centers_, columns=['Annual Income', 'Spending Score']))
